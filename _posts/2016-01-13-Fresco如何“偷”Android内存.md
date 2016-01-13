@@ -18,7 +18,7 @@ MemoryFile是android在最开始就引入的一套框架，其内部实际上是
 
 另外，Ashmem的一个特性就是可以在系统内存不足的时候，回收掉被标记为”unpin”的内存，这个后面会讲到。
 
-另MemoryFile也可以通过Binder跨进程调用来让两个进程共享一段内存区域。由于整个申请内存的过程并不再Java层上，可以很明显的看出使用MemoryFile申请的内存实际上是并不会占用Java堆内存的。
+另外MemoryFile也可以通过Binder跨进程调用来让两个进程共享一段内存区域。由于整个申请内存的过程并不再Java层上，可以很明显的看出使用MemoryFile申请的内存实际上是并不会占用Java堆内存的。
 MemoryFile暴露出来的用户接口可以说跟他的名字一样，基本上跟我们平时的文件的读写基本一致，也可以使用InputStream和OutputStream来对其进行读写等操作：
 
     MemoryFile memoryFile = new MemoryFile(null, inputStream.available());
