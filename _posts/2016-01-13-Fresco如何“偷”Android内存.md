@@ -35,6 +35,24 @@ MemoryFile是一个非常trickly的东西，由于并不占用Java堆内存，�
 
 ![github](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6Q8Q5loNoKgDtqXMcEn2DJ7X4tGCj0ux6SGevzI3V9HT9LMmscROWaw0RDWsgHBl7zYS1tdYAkw7w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1 "github")
 
+可以看出来虽然MemoryFile申请的内存不计入Java堆也不计入Native堆中，但是占用了Ashmem的内存，这个实际上是算入了app当前占用的内存当中。
 
+但是在4.4以下的机器中时，使用MemoryFile申请的内存居然是不算入app的内存中的：
 
+![github](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6Q8Q5loNoKgDtqXMcEn2DJ7ibQdGAWX8LlpRx6kwJfhUoEicN1NTGROSaZtVNQeHQgknI1AjICGGsrw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1 "github")
+
+而且这里我也算过，也是不算入Native Heap中的，另外，这个时候去系统设置里面看进程的内存占用，也可以看出来其实并没有计入Ashmem的内存的。
+
+这个应该是android的一个BUG，但是我搜了一下并没有搜到对应的issue，搞不好这里也可能是一个feature。
+
+而在大名鼎鼎的Fresco当中，他们也有用到这个bug来避免在decode bitmap的时候，将文件的字节读到Java堆中，使用了MemoryFile，并利用了这个BUG然这部分内存不算入app中，这里分别对应了Fresco中的GingerbreadPurgeableDecoder和KitKatPurgeableDecoder，Fresco在decode图片的时候会在4.4和4.4以下的系统中分别使用这两个不同的decoder。
+
+从这个地方可以看出来，使用MemoryFile，在4.4以下的系统当中，可以帮我们的app额外”偷”一些内存，并且可以不计入app的内存当中。
+
+<h1>Summary</h1>
+这里主要是简单介绍了MemoryFile的基本原理和用法，并且阐述了一个MemoryFile中一个可以帮助开发者”偷”内存的地方，这个是一个非常trickly的方法，虽然4.4以下使用这块的内存并不计入进程当中，但是并不推荐大量使用，因为当设置了allowPurging为false的时候，这个对应的Ashmem内存区域是被”pin”了，那么在android系统内存不足的时候，是不能够把这段内存区域回收的，如果长时间没有释放的话，这样子相当于无端端占用了大量手机内存而又无法回收，那对系统的稳定性肯定会造成影响。
+
+<h1>References</h1>
+* http://blog.csdn.net/luoshengyang/article/details/6664554
+* http://elinux.org/Android_Kernel_Features#ashmem
 
