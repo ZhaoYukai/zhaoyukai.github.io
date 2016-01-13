@@ -11,7 +11,7 @@ header-img: "img/green.jpg"
 # 联系方式
 
 *   Email：zhaoyukaicuc@vip.163.com
-*   QQ/微信号：kay_922/赵玉凯
+*   微信号/昵称：kay_922/赵玉凯
 
 * * *
 
