@@ -41,6 +41,9 @@ MemoryFile是一个非常trickly的东西，由于并不占用Java堆内存，�
 
 ![github](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6Q8Q5loNoKgDtqXMcEn2DJ7ibQdGAWX8LlpRx6kwJfhUoEicN1NTGROSaZtVNQeHQgknI1AjICGGsrw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1 "github")
 
+
+![github](http://d.pcs.baidu.com/thumbnail/c80a05ded6bf532229c6594c92b6682e?fid=3306206447-250528-677984851340816&time=1452672000&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-NHvAbIYq1QEkM8G62Ky37jkcdYw%3d&expires=8h&chkbd=0&chkv=0&dp-logid=294237499231974897&dp-callid=0&size=c10000_u10000&quality=90 "github")
+
 而且这里我也算过，也是不算入Native Heap中的，另外，这个时候去系统设置里面看进程的内存占用，也可以看出来其实并没有计入Ashmem的内存的。
 
 这个应该是android的一个BUG，但是我搜了一下并没有搜到对应的issue，搞不好这里也可能是一个feature。
