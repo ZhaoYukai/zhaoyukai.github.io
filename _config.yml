@@ -21,7 +21,7 @@ twitter_username:
 github_username: zhaoyukai
 weibo_username: 神圣伊米亚之王
 facebook_username:
-zhihu_username: 赵玉凯
+zhihu_username: zhao-yu-kai-33
 
 # Build settings  
 # use Github Flavored Markdown !important  
@@ -44,7 +44,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "hanson"
+      author: "zhaoyukai"
       header-img: "img/facebook.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
