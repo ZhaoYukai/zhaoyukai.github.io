@@ -27,3 +27,14 @@ MemoryFile暴露出来的用户接口可以说跟他的名字一样，基本上�
     outputStream.write(1024);
 
 上面可以看到allowPurging这个调用，这个就是之前说的”pin”和”unpin”，在设置了allowPurging为false之后，这个MemoryFile对应的Ashmem就会被标记成”pin”，那么即使在android系统内存不足的时候，也不会对这段内存进行回收。另外，由于Ashmem默认都是”unpin”的，因此申请的内存在某个时间点内都可能会被回收掉，这个时候是不可以再读写了。
+
+<h1>Tricks</h1>
+MemoryFile是一个非常trickly的东西，由于并不占用Java堆内存，我们可以将一些对象用MemoryFile来保存起来避免GC，另外，这里可能android上有个BUG：
+
+在4.4及其以上的系统中，如果在应用中使用了MemoryFile，那么在dumpsys meminfo的时候，可以看到多了一项Ashmem的值：
+
+![github](http://mmbiz.qpic.cn/mmbiz/e4JibCgzXv6Q8Q5loNoKgDtqXMcEn2DJ7X4tGCj0ux6SGevzI3V9HT9LMmscROWaw0RDWsgHBl7zYS1tdYAkw7w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1 "github")
+
+
+
+
