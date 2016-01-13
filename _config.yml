@@ -1,15 +1,15 @@
 # Site settings
-title: Hanson
+title: ZhaoYukai
 header-img: "img/facebook.jpg"
 tagline: "cn"  
-description: "Hanson|Think Different"  
+description: "ZhaoYukai|Think Different"  
 baseurl: ""
-url: "http://zyphs21.github.io"  
+url: "http://zhaoyukai.github.io"  
 
 # About/contact
 owner: 
-  name: "张远平"
-  email: yuanpingzhang123@gmail.com
+  name: "赵玉凯"
+  email: zhaoyukaicuc@vip.163.com
   bio: ""
 
 # Data
@@ -18,10 +18,10 @@ favicon: img/favicon.png
 
 douban_username:  
 twitter_username: 
-github_username: zyphs21
-weibo_username: 汉森HS
+github_username: zhaoyukai
+weibo_username: 神圣伊米亚之王
 facebook_username:
-zhihu_username: zhang-yi-sen-46
+zhihu_username: 赵玉凯
 
 # Build settings  
 # use Github Flavored Markdown !important  
@@ -51,9 +51,9 @@ defaults:
 comments :
   provider : duoshuo
   duoshuo :
-    short_name : hanson
+    short_name : zhaoyukai
   disqus :
-      short_name : hanson
+      short_name : zhaoyukai
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: 
