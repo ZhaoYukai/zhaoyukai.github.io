@@ -9,10 +9,7 @@ header-img: "img/zhihu.jpg"
 ###Path：
 
 
-- 加入了XOGroup旗下TheKnots.com广州研发中心——诺特软件开发有限公司 Android开发
-
-- 加入了ZTESoft 中兴软创 广州研发中心 
-  Java开发
+- 中国移动通信研究院 绿色通信研究所 专注于Android性能功耗测试分析
 
 - 追寻更好的自己
 
