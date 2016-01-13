@@ -11,7 +11,6 @@ description: Tricking Android MemoryFile
 之前在做一个内存优化的时候，使用到了MemoryFile，由此发现了MemoryFile的一些特性以及一个非常trickly的使用方法，因此在这里记录一下。
 
 <h1>What is it</h1>
-# What is it
 
 MemoryFile是android在最开始就引入的一套框架，其内部实际上是封装了android特有的内存共享机制Ashmem匿名共享内存。
 
