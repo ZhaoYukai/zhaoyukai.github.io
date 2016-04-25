@@ -34,6 +34,7 @@ MemoryFile是一个非常trickly的东西，由于并不占用Java堆内存，�
 在4.4及其以上的系统中，如果在应用中使用了MemoryFile，那么在dumpsys meminfo的时候，可以看到多了一项Ashmem的值：
 
 ![github](https://github.com/ZhaoYukai/zhaoyukai.github.io/blob/master/img/memoryfile_1.jpg "github")
+![image](https://github.com/71.png)
 
 可以看出来虽然MemoryFile申请的内存不计入Java堆也不计入Native堆中，但是占用了Ashmem的内存，这个实际上是算入了app当前占用的内存当中。
 
