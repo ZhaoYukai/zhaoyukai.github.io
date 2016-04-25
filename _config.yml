@@ -1,15 +1,15 @@
 # Site settings
-title: ZhaoYukai
+title: Hanson
 header-img: "img/facebook.jpg"
 tagline: "cn"  
-description: "ZhaoYukai|Think Different"  
+description: "Hanson|Think Different"  
 baseurl: ""
-url: "http://zhaoyukai.github.io"  
+url: "http://zyphs21.github.io"  
 
 # About/contact
 owner: 
-  name: "赵玉凯"
-  email: zhaoyukaicuc@vip.163.com
+  name: "张远平"
+  email: yuanpingzhang123@gmail.com
   bio: ""
 
 # Data
@@ -18,10 +18,10 @@ favicon: img/favicon.png
 
 douban_username:  
 twitter_username: 
-github_username: zhaoyukai
-weibo_username: 神圣伊米亚之王
+github_username: zyphs21
+weibo_username: 汉森HS
 facebook_username:
-zhihu_username: zhao-yu-kai-33
+zhihu_username: zhang-yi-sen-46
 
 # Build settings  
 # use Github Flavored Markdown !important  
@@ -31,7 +31,7 @@ highlighter: pygments
 permalink: pretty
 paginate: 8
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-relative_permalinks: true
+
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone: Asia/Shanghai
@@ -51,9 +51,9 @@ defaults:
 comments :
   provider : duoshuo
   duoshuo :
-    short_name : zhaoyukai
+    short_name : hanson
   disqus :
-      short_name : zhaoyukai
+      short_name : hanson
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: 
