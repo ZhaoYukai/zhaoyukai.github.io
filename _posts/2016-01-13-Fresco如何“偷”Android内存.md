@@ -33,13 +33,13 @@ MemoryFile是一个非常trickly的东西，由于并不占用Java堆内存，�
 
 在4.4及其以上的系统中，如果在应用中使用了MemoryFile，那么在dumpsys meminfo的时候，可以看到多了一项Ashmem的值：
 
-![github](http://d.pcs.baidu.com/thumbnail/e0b7db815cb13f3d8abb09a5c5971cf6?fid=3306206447-250528-128627318733796&time=1452672000&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-eWjd4wt0XuX0NYornCdwDlRBcuw%3d&expires=8h&chkbd=0&chkv=0&dp-logid=294490360094378567&dp-callid=0&size=c10000_u10000&quality=90 "github")
+![github](https://github.com/ZhaoYukai/zhaoyukai.github.io/blob/master/img/memoryfile_1.jpg "github")
 
 可以看出来虽然MemoryFile申请的内存不计入Java堆也不计入Native堆中，但是占用了Ashmem的内存，这个实际上是算入了app当前占用的内存当中。
 
 但是在4.4以下的机器中时，使用MemoryFile申请的内存居然是不算入app的内存中的：
 
-![github](http://d.pcs.baidu.com/thumbnail/11718ba7bc0931a9a2858d30b10593d5?fid=3306206447-250528-347258409134804&time=1452672000&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-T1XRBOCrOLzEJEfCSkvt7mgYVVI%3d&expires=8h&chkbd=0&chkv=0&dp-logid=294490360094378567&dp-callid=0&size=c10000_u10000&quality=90 "github")
+![github](https://github.com/ZhaoYukai/zhaoyukai.github.io/blob/master/img/memoryfile_2.jpg "github")
 
 而且这里我也算过，也是不算入Native Heap中的，另外，这个时候去系统设置里面看进程的内存占用，也可以看出来其实并没有计入Ashmem的内存的。
 
